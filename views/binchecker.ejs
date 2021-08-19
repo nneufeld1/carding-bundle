@@ -1,0 +1,72 @@
+<%- include('include/header') %>
+<div class="app-content content">
+    <div class="content-wrapper">
+      <div class="content-wrapper-before"></div>
+      <div class="content-header row">
+        <div class="content-header-left col-md-4 col-12 mb-2">
+          <h3 class="content-header-title">Bin Checker</h3>
+        </div>
+      </div>
+      <div class="content-body">
+        <div class="d-flex justify-content-center">
+          <div class="row match-height">
+            <div class="col-xl-12 col-lg-12 col-md-12">
+              <div class="card">
+                <div class="card-block">
+                  <div class="card-body">
+                    <form action="" method="post" id="theForm" class="form">
+                        <fieldset class="form-group">
+                        <label for="basicInput">Enter bin</label>
+                        <input
+                        type='text' pattern='[0-9]*' class="form-control input-lg" minlength='4' size='7' placeholder='BIN #' name='binquery' id='binquery'
+                        autofocus
+                        />
+                        </fieldset>
+                        <span class="tags float-right">
+                        <button
+                            type="submit"
+                            class="btn btn-primary btn-min-width mr-1 mb-1"
+                        >
+                            Submit
+                        </button>
+                        </span>
+                    </form>
+                  </div>
+                  <div class="card-footer d-none">
+                    <div class="table-responsive">
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <th scope="row">Brand</th>
+                            <td id="brand"></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Type</th>
+                            <td id="type"></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Scheme</th>
+                            <td id="scheme"></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Country</th>
+                            <td id="country"></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Bank</th>
+                            <td id="bank"></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%- include('include/footer') %>
+  <script src="/js/bin_search.js" type="text/javascript"></script>

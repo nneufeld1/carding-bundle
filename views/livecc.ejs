@@ -1,0 +1,105 @@
+<%- include('include/header') %>
+<div class="app-content content">
+    <div class="content-wrapper">
+      <div class="content-wrapper-before"></div>
+      <div class="content-header row">
+        <div class="content-header-left col-md-4 col-12 mb-2">
+          <h3 class="content-header-title">
+            Check card status using stripe api
+          </h3>
+        </div>
+        <div class="content-header-left col-md-4 col-12 mb-2">
+            <button class="btn btn-primary float-right d-none" id="changekey">Change key</button>
+        </div>
+      </div>
+      <div class="content-body">
+        <div class="row match-height acceptkey">
+          <div class="col-xl-12 col-lg-12 col-md-12">
+            <div class="card">
+              <div class="card-block">
+                <div class="card-body">
+                  <fieldset class="form-group">
+                    <label for="basicInput">Stripe Public Key</label>
+                    <input type="text" class="form-control" id="stripePrivate" />
+                  </fieldset>
+                  <fieldset class="form-group">
+                    <label for="basicInput">Stripe Secret Key</label>
+                    <input type="text" class="form-control" id="stripeSecret" />
+                  </fieldset>
+                  <span class="tags float-right">
+                    <button
+                      type="button"
+                      class="btn btn-primary btn-min-width submitbtn mr-1 mb-1"
+                    >
+                      Submit
+                    </button>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Statistics -->
+        <div class="row match-height startprocess d-none">
+          <div class="col-xl-6 col-lg-12">
+            <div class="card">
+              <div class="card-content">
+                <div class="card-body">
+                  <fieldset class="form-group">
+                    <textarea
+                      class="form-control"
+                      name="cards" id="cards"
+                      rows="25"
+                      placeholder="XXXXXXXXXXXXXXXX|XX|XXXX|XXX"
+                    ></textarea>
+                  </fieldset>
+                </div>
+              </div>
+              <div class="card-footer">
+                <span class="tags float-right">
+                  <button
+                    type="button"
+                    class="btn btn-primary btn-min-width mr-1 mb-1 startrend"
+                  >
+                    Submit
+                  </button>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-12">
+            <div class="card">
+              <div class="card-header">
+                <h4 class="card-title">Live Cards</h4>
+                <a class="heading-elements-toggle">
+                  <i class="fa fa-ellipsis-v font-medium-3"></i>
+                </a>
+              </div>
+              <div class="card-content">
+                <div id="livecardappend" class="media-list" >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-12">
+            <div class="card">
+              <div class="card-header">
+                <h4 class="card-title">Dead Cards</h4>
+                <a class="heading-elements-toggle">
+                  <i class="fa fa-ellipsis-v font-medium-3"></i>
+                </a>
+              </div>
+              <div class="card-content">
+                <div id="deadcardappend" class="media-list">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--/ Statistics -->
+      </div>
+    </div>
+  </div>
+  <%- include('include/footer') %>
+  <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+  <script src="/js/script.js" type="text/javascript"></script>
